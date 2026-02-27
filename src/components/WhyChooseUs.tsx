@@ -24,6 +24,7 @@ export default function WhyChooseUs() {
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extralight text-white text-left mb-12 lg:mb-16">
           Why Choose Us
         </h2>
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {cards.map((card) => (
             <article
