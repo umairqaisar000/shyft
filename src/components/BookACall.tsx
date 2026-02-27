@@ -6,7 +6,7 @@ export default function BookACall() {
   return (
     <section
       id="book-call"
-      className="relative py-20 sm:py-24 lg:py-32 bg-black overflow-hidden mx-36 rounded-3xl mb-24"
+      className="relative py-20 sm:py-24 lg:py-32 bg-black overflow-hidden mx-6 sm:mx-8 md:mx-6 lg:mx-10 xl:mx-36 rounded-3xl mb-24"
       style={{
         backgroundImage:
           "linear-gradient(rgba(34, 68, 143, 0.3), rgba(9, 63, 88, 0.3)), url('/images/hero-image-3.jpg')",
