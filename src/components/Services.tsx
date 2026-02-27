@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
+import Image from "next/image";
 
 const services = [
   {
@@ -71,10 +72,18 @@ export default function Services() {
     >
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none"
-          style={{ backgroundImage: `url("/images/Light-effects@4x.png")` , opacity: headingOpacity }}
+          className="absolute inset-0 z-0 pointer-events-none"
+          style={{ opacity: headingOpacity }}
           aria-hidden
-        />
+        >
+          <Image
+            src="/images/Light-effects@4x.png"
+            alt=""
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </div>
         {/* Our services heading */}
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4 pointer-events-none transition-opacity duration-300" style={{ opacity: headingOpacity }}>
           <h2 className="font-heading text-3xl sm:text-4xl lg:text-9xl font-extralight text-white text-center mb-8">
@@ -95,9 +104,18 @@ export default function Services() {
                   transform: `translateY(${translateY}%) rotate(${rotation}deg)`,
                 }}
               >
-                <div className="relative w-full max-w-xs h-[320px] sm:h-[380px] rounded-2xl bg-dark-800 p-6 sm:p-8 shadow-2xl flex flex-col justify-end overflow-hidden" style={{ backgroundImage: `url(${service.image})` , backgroundSize: "cover", backgroundPosition: "center" }}>
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-blue-600 pointer-events-none" aria-hidden />
-                  <h3 className="relative z-10 text-4xl font-extralight text-white pt-2">
+                <div className="relative w-full max-w-xs h-[320px] sm:h-[380px] rounded-2xl bg-dark-800 p-6 sm:p-8 shadow-2xl flex flex-col justify-end overflow-hidden">
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={service.image}
+                      alt=""
+                      fill
+                      className="object-cover object-center"
+                      sizes="(max-width: 640px) 320px, 380px"
+                    />
+                  </div>
+                  <div className="absolute inset-0 z-[1] bg-gradient-to-b from-transparent via-transparent to-blue-600 pointer-events-none" aria-hidden />
+                  <h3 className="relative z-[2] text-4xl font-extralight text-white pt-2">
                     {service.title}
                   </h3>
                 </div>

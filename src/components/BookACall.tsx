@@ -7,15 +7,23 @@ export default function BookACall() {
     <section
       id="book-call"
       className="relative py-20 sm:py-24 lg:py-32 bg-black overflow-hidden mx-6 sm:mx-8 md:mx-6 lg:mx-10 xl:mx-36 rounded-3xl mb-24"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(34, 68, 143, 0.3), rgba(9, 63, 88, 0.3)), url('/images/hero-image-3.jpg')",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
     >
-      <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Optimized background image (Next.js serves WebP/resized on Vercel) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/hero-image-3.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="(max-width: 1280px) 100vw, 1400px"
+          priority={false}
+        />
+        <div
+          className="absolute inset-0 z-[1] bg-gradient-to-b from-[rgba(34,68,143,0.3)] to-[rgba(9,63,88,0.3)]"
+          aria-hidden
+        />
+      </div>
+      <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extralight text-white mb-6">
         Transform your business with 
         cutting-edge solutions
